@@ -2,7 +2,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const LubelskieModel = require("./models/Lodzkie");
-require("dotenv").config(); // Load environment variables from .env file
+const path = require("path");
+const rootEnvPath = path.resolve(__dirname, "../.env");
+require("dotenv").config({ path: rootEnvPath });
 
 const app = express();
 app.use(cors());
